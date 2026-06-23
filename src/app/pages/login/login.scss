@@ -1,0 +1,116 @@
+/* พื้นหลังเต็มจอ */
+.login-wrapper {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+/* กล่องหลัก */
+.con {
+  width: 100%;
+  max-width: 600px;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+}
+
+/* โลโก้ */
+.logo {
+  width: 110px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+
+/* กล่อง input */
+.form-group {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #888;
+  background-color: #e0e0e0;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #4caf50;
+  background-color: #ffffff;
+}
+
+/* ปุ่ม */
+.login-btn {
+  width: 300px;
+  padding: 14px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+
+  /* เพิ่ม */
+  transition: all 0.35s ease;
+}
+
+.login-btn:hover {
+  background-color: #1b5e20;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* สมัครสมาชิก */
+.register-text {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-text span {
+  color: #2e7d32;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.register-text span:hover {
+  text-decoration: underline;
+}
+
+/* 📱 Mobile ปรับขนาดตัวอักษร */
+@media (max-width: 480px) {
+  .con {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 13px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+}

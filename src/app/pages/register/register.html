@@ -1,0 +1,27 @@
+<div class="register-wrapper">
+  <div class="con">
+    <h2>สมัครสมาชิกเจ้าหน้าที่</h2>
+
+    <input type="text" placeholder="ชื่อ-นามสกุล" [(ngModel)]="fullName" />
+    <input type="text" placeholder="เลขบัตรประชาชน" [(ngModel)]="citizenId" />
+    <input type="date" [(ngModel)]="birthDate" />
+
+    <select [(ngModel)]="gender">
+      <option value="">เลือกเพศ</option>
+      <option value="male">ชาย</option>
+      <option value="female">หญิง</option>
+      <option value="other">อื่นๆ</option>
+    </select>
+
+    <input type="file" (change)="onFileSelected($event)" />
+
+    <input type="text" placeholder="เบอร์โทรศัพท์" [(ngModel)]="phone" />
+    <input type="email" placeholder="อีเมล" [(ngModel)]="email" />
+    <input type="text" placeholder="ที่อยู่ปัจจุบัน" [(ngModel)]="address" />
+
+    <input type="password" placeholder="รหัสผ่าน" [(ngModel)]="password" />
+    <input type="password" placeholder="ยืนยันรหัสผ่าน" [(ngModel)]="confirmPassword" />
+
+    <button (click)="onRegister()">สมัครสมาชิก</button>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  color: #000000;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* ================= LEFT SIDE ================= */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+/* โลโก้ */
+.logo {
+  width: 60px;
+  height: 60px;
+  background-image: url("https://med2.msu.ac.th/mhealth/img/007-med-msu.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 15px;
+}
+
+/* กลุ่มข้อความ */
+.textlogo {
+  margin-left: 5px;
+}
+
+.textlogo h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.textlogo h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* ================= RIGHT SIDE ================= */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+/* ลิงก์เมนู */
+.nav-right a {
+  color: #000000;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.nav-right a:hover {
+  color: #1f6a23;
+  transform: translateY(-3px);
+}
+

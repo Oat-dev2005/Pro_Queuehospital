@@ -1,0 +1,52 @@
+.detail-container{
+  display:flex;
+  justify-content:center;
+  padding:40px;
+  background:#f7f9fc;
+}
+
+.detail-card{
+  background:white;
+  width:600px;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.detail-card h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:#333;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:18px;
+}
+
+.info-item{
+  display:flex;
+  flex-direction:column;
+  background:#f5f7fa;
+  padding:12px;
+  border-radius:8px;
+}
+
+.info-item label{
+  font-size:12px;
+  color:#666;
+  margin-bottom:4px;
+}
+
+.info-item span{
+  font-weight:600;
+}
+
+.full{
+  grid-column:1 / span 2;
+}
+
+.price{
+  color:#e67e22;
+}

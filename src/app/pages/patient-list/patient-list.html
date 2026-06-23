@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<div class="page">
+
+  <div class="search-bar">
+  <input
+    type="text"
+    placeholder="🔍 ค้นหาผู้ป่วย..."
+    (input)="search($event)"
+  />
+</div>
+
+  <div class="grid">
+    <div
+      class="patient-card"
+      *ngFor="let p of patients$ | async"
+      (click)="openDetail(p)"
+    >
+
+      <div class="card-header">
+        <h3>ห้องตรวจ {{ p.room }}</h3>
+      </div>
+
+      <div class="card-body">
+        <p class="name">{{ p.name }}</p>
+        <p class="cid">เลขบัตร : {{ p.citizenId }}</p>
+
+        <p class="price" *ngIf="p.price">
+          ค่าใช้จ่าย {{ p.price }} บาท
+        </p>
+      </div>
+
+      <div class="button-group" (click)="$event.stopPropagation()">
+
+        <button class="confirm" *ngIf="p.price">
+          ยืนยัน
+        </button>
+
+        <button class="cancel" (click)="deletePatient(p.id!)">
+          ยกเลิก
+        </button>
+
+        <button class="qr" (click)="showQR(p)">
+          QR Code
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

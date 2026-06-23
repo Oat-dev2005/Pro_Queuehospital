@@ -1,0 +1,27 @@
+<div class="login-wrapper">
+  <div class="con">
+    <img
+      src="https://med2.msu.ac.th/mhealth/img/007-med-msu.png"
+      class="logo"
+    />
+
+    <h2>เข้าสู่ระบบสำหรับเจ้าหน้าที่โรงพยาบาลสุทธาเวช</h2>
+    <h3>คณะแพทยศาสตร์ มหาวิทยาลัยมหาสารคาม</h3>
+
+    <div class="form-group">
+      <input type="email" placeholder="อีเมล" [(ngModel)]="email" />
+    </div>
+
+    <div class="form-group">
+      <input type="password" placeholder="รหัสผ่าน" [(ngModel)]="password" />
+    </div>
+    <div class="but">
+      <button class="login-btn" (click)="onLogin()">เข้าสู่ระบบ</button>
+
+      <p class="register-text">
+      ยังไม่มีบัญชี?
+      <span routerLink="/register">สมัครสมาชิก</span>
+    </p>
+    </div>
+  </div>
+</div>

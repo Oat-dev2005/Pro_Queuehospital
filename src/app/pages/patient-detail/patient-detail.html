@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<div class="detail-container" *ngIf="patient">
+
+  <div class="detail-card">
+
+    <h2>🩺 ข้อมูลผู้ป่วย</h2>
+
+    <div class="info-grid">
+
+      <div class="info-item">
+        <label>ชื่อ</label>
+        <span>{{patient.name}}</span>
+      </div>
+
+      <div class="info-item">
+        <label>อายุ</label>
+        <span>{{patient.age}} ปี</span>
+      </div>
+
+      <div class="info-item">
+        <label>เพศ</label>
+        <span>{{patient.gender}}</span>
+      </div>
+
+      <div class="info-item">
+        <label>เลขบัตรประชาชน</label>
+        <span>{{patient.citizenId}}</span>
+      </div>
+
+      <div class="info-item">
+        <label>วันที่เข้ารับการรักษา</label>
+        <span>{{patient.date}}</span>
+      </div>
+
+      <div class="info-item">
+        <label>ห้องตรวจ</label>
+        <span>{{patient.room}}</span>
+      </div>
+
+      <div class="info-item">
+        <label>โรค / อาการ</label>
+        <span>{{patient.disease}}</span>
+      </div>
+
+      <div class="info-item">
+        <label>ยา</label>
+        <span>{{patient.medicine}}</span>
+      </div>
+
+      <div class="info-item full">
+        <label>หมายเหตุ</label>
+        <span>{{patient.note}}</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

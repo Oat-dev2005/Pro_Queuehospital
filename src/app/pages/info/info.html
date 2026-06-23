@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<div class="container">
+
+  <h2>Patient Record Form</h2>
+
+  <form class="patient-form">
+
+    <div class="form-group">
+      <label>Date Received Medicine</label>
+      <input type="date" [(ngModel)]="patient.date" name="date">
+    </div>
+
+    <div class="form-group">
+      <label>Citizen ID</label>
+      <input type="text" [(ngModel)]="patient.citizenId" name="citizenId">
+    </div>
+
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" [(ngModel)]="patient.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <select [(ngModel)]="patient.gender" name="gender">
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Age</label>
+      <input type="number" [(ngModel)]="patient.age" name="age">
+    </div>
+
+    <div class="form-group">
+      <label>Medicine Information</label>
+      <textarea [(ngModel)]="patient.medicine" name="medicine"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Underlying Disease</label>
+      <textarea [(ngModel)]="patient.disease" name="disease"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Doctor Notes</label>
+      <textarea [(ngModel)]="patient.note" name="note"></textarea>
+    </div>
+
+    <button type="button" (click)="savePatient()" class="submit-btn">
+      Save Record
+    </button>
+
+  </form>
+
+</div>
