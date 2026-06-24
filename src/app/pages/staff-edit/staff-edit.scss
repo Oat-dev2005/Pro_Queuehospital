@@ -1,0 +1,140 @@
+.edit-page {
+  min-height: 100vh;
+  padding: 32px;
+  background: #f6f8fb;
+}
+
+.edit-form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid #e3e8ef;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #367a55;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #526173;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d6dde7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #243041;
+  font: inherit;
+  font-weight: 400;
+  outline: none;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2f7a4f;
+  box-shadow: 0 0 0 3px rgba(47, 122, 79, 0.14);
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+button {
+  min-width: 110px;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  background: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.secondary {
+  border: 1px solid #d6dde7;
+  background: #ffffff;
+  color: #374151;
+}
+
+.secondary:hover {
+  background: #f3f6f9;
+}
+
+@media (max-width: 720px) {
+  .edit-page {
+    padding: 20px;
+  }
+
+  .edit-form {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  button {
+    width: 100%;
+  }
+}

@@ -56,10 +56,10 @@ export class PatientService {
     return docData(ref, { idField: 'id' }) as Observable<Patient>;
   }
 
-  // ลบผู้ป่วย
-  deletePatient(id: string) {
-    const ref = doc(this.firestore, 'patients', id);
+  // // ลบผู้ป่วย
+  // deletePatient(id: string) {
+  //   const ref = doc(this.firestore, 'patients', id);
 
-    return deleteDoc(ref);
-  }
+  //   return deleteDoc(ref);
+  // }
 }

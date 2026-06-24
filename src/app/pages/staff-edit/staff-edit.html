@@ -1,0 +1,98 @@
+<app-header></app-header>
+
+<div class="edit-page">
+  <form class="edit-form" (ngSubmit)="saveStaff()">
+    <div class="form-header">
+      <div>
+        <p class="eyebrow">Staff Management</p>
+        <h1>Edit Staff</h1>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <label>
+        Full name
+        <input
+          type="text"
+          name="fullName"
+          [(ngModel)]="staff.fullName"
+          required
+        />
+      </label>
+
+      <label>
+        Citizen ID
+        <input
+          type="text"
+          name="citizenId"
+          [(ngModel)]="staff.citizenId"
+          required
+        />
+      </label>
+
+      <label>
+        Birth date
+        <input
+          type="date"
+          name="birthDate"
+          [(ngModel)]="staff.birthDate"
+        />
+      </label>
+
+      <label>
+        Gender
+        <select name="gender" [(ngModel)]="staff.gender">
+          <option value="">Select gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+
+      <label>
+        Email
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="staff.email"
+          required
+        />
+      </label>
+
+      <label>
+        Phone
+        <input type="text" name="phone" [(ngModel)]="staff.phone" />
+      </label>
+
+      <label>
+        Position
+        <input
+          type="text"
+          name="position"
+          [(ngModel)]="staff.position"
+        />
+      </label>
+
+      <label>
+        Password
+        <input
+          type="text"
+          name="password"
+          [(ngModel)]="staff.password"
+        />
+      </label>
+
+      <label class="full">
+        Address
+        <textarea name="address" [(ngModel)]="staff.address"></textarea>
+      </label>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="secondary" (click)="cancel()">Cancel</button>
+      <button type="submit" [disabled]="saving">
+        {{ saving ? 'Saving...' : 'Save' }}
+      </button>
+    </div>
+  </form>
+</div>
