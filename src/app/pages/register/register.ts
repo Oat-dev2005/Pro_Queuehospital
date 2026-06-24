@@ -12,10 +12,9 @@ import { Auth } from '@angular/fire/auth';
   standalone: true,
   imports: [FormsModule, RouterModule],
   templateUrl: './register.html',
-  styleUrl: './register.scss'
+  styleUrl: './register.scss',
 })
 export class Register {
-
   fullName = '';
   citizenId = '';
   birthDate = '';
@@ -32,7 +31,7 @@ export class Register {
     private authService: AuthService,
     private firestore: Firestore,
     private auth: Auth,
-    private router: Router
+    private router: Router,
   ) {}
 
   onFileSelected(event: any) {
@@ -40,18 +39,19 @@ export class Register {
   }
 
   async onRegister() {
-
     if (this.password !== this.confirmPassword) {
       alert('รหัสผ่านไม่ตรงกัน');
       return;
     }
 
     try {
-      const userCredential = await this.authService.register(this.email, this.password);
+      const userCredential = await this.authService.register(
+        this.email,
+        this.password,
+      );
       const uid = userCredential.user.uid;
 
-      
-      await setDoc(doc(this.firestore, 'users', uid), {
+      await setDoc(doc(this.firestore, 'staff', uid), {
         fullName: this.fullName,
         citizenId: this.citizenId,
         birthDate: this.birthDate,
@@ -59,13 +59,11 @@ export class Register {
         phone: this.phone,
         email: this.email,
         address: this.address,
-        role: 'staff',
-        createdAt: new Date()
+        role: 'admin',
       });
 
       alert('สมัครสมาชิกสำเร็จ');
-      this.router.navigate(['/main']);
-
+      this.router.navigate(['/login']);
     } catch (error: any) {
       alert(error.message);
     }

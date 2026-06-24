@@ -12,22 +12,22 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './login.scss',
 })
 export class Login {
-
   email: string = '';
   password: string = '';
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
   ) {}
 
   onLogin() {
-    this.authService.login(this.email, this.password)
+    this.authService
+      .login(this.email, this.password)
       .then(() => {
         alert('เข้าสู่ระบบสำเร็จ');
         this.router.navigate(['/patients']);
       })
-      .catch(err => {
+      .catch((err) => {
         alert(err.message);
       });
   }
