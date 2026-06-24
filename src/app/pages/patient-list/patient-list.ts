@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import {
-  PrescriptService,
-  Prescription,
-} from '../../services/prescript.service';
 import { Observable, BehaviorSubject, combineLatest, map } from 'rxjs';
 import { AsyncPipe, CommonModule, NgFor } from '@angular/common';
 import { Header } from '../../components/header/header';
 import { Router } from '@angular/router';
+import {
+  Prescription,
+  PrescriptService,
+} from '../../services/prescript.service';
 
 @Component({
   selector: 'app-patient-list',
