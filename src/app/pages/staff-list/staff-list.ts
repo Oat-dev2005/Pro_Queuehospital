@@ -34,7 +34,7 @@ export class StaffList {
         return staffs.filter((staff) =>
           [
             staff.fullName,
-            staff.citizenId,
+            staff.s_citizenId,
             staff.email,
             staff.phone,
             staff.position,

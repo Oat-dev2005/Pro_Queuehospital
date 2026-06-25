@@ -7,6 +7,7 @@ import {
   docData,
   query,
   updateDoc,
+  where,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -14,7 +15,7 @@ export interface Staff {
   id?: string;
   address: string;
   birthDate: string;
-  citizenId: string;
+  s_citizenId: string;
   email: string;
   fullName: string;
   gender: string;

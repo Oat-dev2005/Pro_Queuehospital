@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, 
-         signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
+import {
+  Auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from '@angular/fire/auth';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
   constructor(private auth: Auth) {}
+
+  getCurrentUser() {
+    return this.auth.currentUser;
+  }
 
   // Register
   register(email: string, password: string) {

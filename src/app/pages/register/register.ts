@@ -16,7 +16,7 @@ import { Auth } from '@angular/fire/auth';
 })
 export class Register {
   fullName = '';
-  citizenId = '';
+  s_citizenId = '';
   birthDate = '';
   gender = '';
   phone = '';
@@ -39,6 +39,20 @@ export class Register {
   }
 
   async onRegister() {
+    if (
+      !this.email ||
+      !this.fullName ||
+      !this.s_citizenId ||
+      !this.birthDate ||
+      !this.gender ||
+      !this.phone ||
+      !this.password ||
+      !this.confirmPassword
+    ) {
+      alert('กรุณากรอกข้อมูลให้ครบ');
+      return;
+    }
+
     if (this.password !== this.confirmPassword) {
       alert('รหัสผ่านไม่ตรงกัน');
       return;
@@ -49,17 +63,17 @@ export class Register {
         this.email,
         this.password,
       );
-      const uid = userCredential.user.uid;
+      const sid = userCredential.user.uid;
 
-      await setDoc(doc(this.firestore, 'staff', uid), {
+      await setDoc(doc(this.firestore, 'staff', sid), {
         fullName: this.fullName,
-        citizenId: this.citizenId,
+        s_citizenId: this.s_citizenId,
         birthDate: this.birthDate,
         gender: this.gender,
         phone: this.phone,
         email: this.email,
         address: this.address,
-        role: 'admin',
+        position: 'admin',
       });
 
       alert('สมัครสมาชิกสำเร็จ');

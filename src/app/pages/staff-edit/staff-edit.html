@@ -25,18 +25,14 @@
         <input
           type="text"
           name="citizenId"
-          [(ngModel)]="staff.citizenId"
+          [(ngModel)]="staff.s_citizenId"
           required
         />
       </label>
 
       <label>
         Birth date
-        <input
-          type="date"
-          name="birthDate"
-          [(ngModel)]="staff.birthDate"
-        />
+        <input type="date" name="birthDate" [(ngModel)]="staff.birthDate" />
       </label>
 
       <label>
@@ -51,12 +47,7 @@
 
       <label>
         Email
-        <input
-          type="email"
-          name="email"
-          [(ngModel)]="staff.email"
-          required
-        />
+        <input type="email" name="email" [(ngModel)]="staff.email" required />
       </label>
 
       <label>
@@ -66,20 +57,12 @@
 
       <label>
         Position
-        <input
-          type="text"
-          name="position"
-          [(ngModel)]="staff.position"
-        />
+        <input type="text" name="position" [(ngModel)]="staff.position" />
       </label>
 
       <label>
         Password
-        <input
-          type="text"
-          name="password"
-          [(ngModel)]="staff.password"
-        />
+        <input type="text" name="password" [(ngModel)]="staff.password" />
       </label>
 
       <label class="full">
@@ -91,7 +74,7 @@
     <div class="actions">
       <button type="button" class="secondary" (click)="cancel()">Cancel</button>
       <button type="submit" [disabled]="saving">
-        {{ saving ? 'Saving...' : 'Save' }}
+        {{ saving ? "Saving..." : "Save" }}
       </button>
     </div>
   </form>

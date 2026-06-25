@@ -18,7 +18,7 @@ export class StaffEdit {
   staff: Staff = {
     address: '',
     birthDate: '',
-    citizenId: '',
+    s_citizenId: '',
     email: '',
     fullName: '',
     gender: '',
