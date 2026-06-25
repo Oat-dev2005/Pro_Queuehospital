@@ -11,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './header.scss',
 })
 export class Header {
-  position = 'admin';
+  position = '';
 
   constructor(
     private authService: AuthService,

@@ -10,7 +10,6 @@ import { adminGuard } from './services/admin.guard';
 import { staffGuard } from './services/staff.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: Login },
   { path: 'addstaff', component: AddStaff, canActivate: [adminGuard] },
   { path: 'patients', component: PatientList, canActivate: [staffGuard] },
@@ -18,4 +17,8 @@ export const routes: Routes = [
   { path: 'patient/:id', component: PatientDetail, canActivate: [staffGuard] },
   { path: 'staffs', component: StaffList, canActivate: [adminGuard] },
   { path: 'staff-edit/:id', component: StaffEdit, canActivate: [adminGuard] },
+  {
+    path: '**',
+    redirectTo: 'login',
+  },
 ];
