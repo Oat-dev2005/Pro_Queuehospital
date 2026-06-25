@@ -6,15 +6,16 @@ import { AuthService } from '../../services/auth.service';
 
 import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 import { Auth } from '@angular/fire/auth';
+import { Header } from '../../components/header/header';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-add-staff',
   standalone: true,
-  imports: [FormsModule, RouterModule],
-  templateUrl: './register.html',
-  styleUrl: './register.scss',
+  imports: [Header, FormsModule, RouterModule],
+  templateUrl: './add-staff.html',
+  styleUrl: './add-staff.scss',
 })
-export class Register {
+export class AddStaff {
   fullName = '';
   s_citizenId = '';
   birthDate = '';
@@ -38,7 +39,7 @@ export class Register {
     this.selectedFile = event.target.files[0];
   }
 
-  async onRegister() {
+  async onAddStaff() {
     if (
       !this.email ||
       !this.fullName ||
@@ -73,11 +74,11 @@ export class Register {
         phone: this.phone,
         email: this.email,
         address: this.address,
-        position: 'admin',
+        position: 'staff',
       });
 
-      alert('สมัครสมาชิกสำเร็จ');
-      this.router.navigate(['/login']);
+      alert('เพิ่มข้อมูลเจ้าหน้าที่สำเร็จ');
+      this.router.navigate(['/staffs']);
     } catch (error: any) {
       alert(error.message);
     }

@@ -35,14 +35,6 @@
         </p>
       </div>
 
-      <!-- <div
-        class="button-group"
-        *ngIf="p.pay_status === 'ชำระแล้ว'"
-        (click)="$event.stopPropagation()"
-      >
-        <button class="confirm">ยืนยัน</button>
-        <button class="qr" (click)="showQR(p)">QR Code</button>
-      </div> -->
       <div class="button-group" (click)="$event.stopPropagation()">
         <ng-container *ngIf="p.pay_status === 'ชำระแล้ว'">
           <!-- <button class="confirm">ยืนยัน</button> -->

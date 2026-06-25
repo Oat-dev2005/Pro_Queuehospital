@@ -1,6 +1,7 @@
-<div class="register-wrapper">
+<app-header></app-header>
+<div class="add-staff-wrapper">
   <div class="con">
-    <h2>สมัครสมาชิกเจ้าหน้าที่</h2>
+    <h2>เพิ่มข้อมูลเจ้าหน้าที่</h2>
 
     <input type="text" placeholder="ชื่อ-นามสกุล" [(ngModel)]="fullName" />
     <input type="text" placeholder="เลขบัตรประชาชน" [(ngModel)]="s_citizenId" />
@@ -26,6 +27,6 @@
       [(ngModel)]="confirmPassword"
     />
 
-    <button (click)="onRegister()">สมัครสมาชิก</button>
+    <button (click)="onAddStaff()">เพิ่มข้อมูล</button>
   </div>
 </div>
