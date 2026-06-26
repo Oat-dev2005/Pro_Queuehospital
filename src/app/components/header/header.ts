@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { StaffService } from '../../services/staff.service';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
@@ -14,6 +14,7 @@ export class Header {
   position = '';
 
   constructor(
+    private router: Router,
     private authService: AuthService,
     private staffService: StaffService,
   ) {}
@@ -26,5 +27,10 @@ export class Header {
     this.staffService.getStaff(uid).subscribe((staff) => {
       this.position = staff.position;
     });
+  }
+
+   logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

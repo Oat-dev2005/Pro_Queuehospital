@@ -27,11 +27,15 @@ export class StaffList {
       map(([staffs, search]) => {
         const keyword = search.trim().toLowerCase();
 
+      const staffOnly = staffs.filter(
+        (staff) => staff.position.toLowerCase() === 'staff'
+      );
+
         if (!keyword) {
-          return staffs;
+          return staffOnly;
         }
 
-        return staffs.filter((staff) =>
+        return staffOnly.filter((staff) =>
           [
             staff.fullName,
             staff.s_citizenId,

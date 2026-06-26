@@ -2,21 +2,20 @@
 <div class="add-staff-wrapper">
   <div class="con">
     <h2>เพิ่มข้อมูลเจ้าหน้าที่</h2>
-
     <input type="text" placeholder="ชื่อ-นามสกุล" [(ngModel)]="fullName" />
     <input type="text" placeholder="เลขบัตรประชาชน" [(ngModel)]="s_citizenId" />
-    <input type="date" [(ngModel)]="birthDate" />
+    <input type="date" placeholder="วัน/เดือน/ปีเกิด" [(ngModel)]="birthDate" />
 
     <select [(ngModel)]="gender">
-      <option value="">เลือกเพศ</option>
-      <option value="male">ชาย</option>
-      <option value="female">หญิง</option>
-      <option value="other">อื่นๆ</option>
+      <option value="" selected hidden>เลือกเพศ</option>
+      <option value="ชาย">ชาย</option>
+      <option value="หญิง">หญิง</option>
+      <option value="อื่นๆ">อื่นๆ</option>
     </select>
 
-    <input type="file" (change)="onFileSelected($event)" />
+    <input type="file" placeholder="อัปโหลดรูปภาพ" (change)="onFileSelected($event)" />
 
-    <input type="text" placeholder="เบอร์โทรศัพท์" [(ngModel)]="phone" />
+    <input type="tel" placeholder="เบอร์โทรศัพท์" [(ngModel)]="phone" />
     <input type="email" placeholder="อีเมล" [(ngModel)]="email" />
     <input type="text" placeholder="ที่อยู่ปัจจุบัน" [(ngModel)]="address" />
 

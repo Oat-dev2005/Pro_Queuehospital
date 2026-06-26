@@ -24,6 +24,6 @@
     <a *ngIf="position === 'admin'" routerLink="/addstaff">
       เพิ่มข้อมูลเจ้าหน้าที่
     </a>
-    <a routerLink="/">ออกจากระบบ</a>
+    <a (click)="logout()" style="cursor: pointer;">ออกจากระบบ</a>
   </div>
 </nav>

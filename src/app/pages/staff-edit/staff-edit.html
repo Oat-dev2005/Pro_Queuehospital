@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="edit-page">
-  <form class="edit-form" (ngSubmit)="saveStaff()">
+  <form class="edit-form" #editform="ngForm" (ngSubmit)="saveStaff()">
     <div class="form-header">
       <div>
         <p class="eyebrow">Staff Management</p>
@@ -11,37 +11,44 @@
 
     <div class="form-grid">
       <label>
-        Full name
+        ชื่อ-นามสกุล
         <input
           type="text"
           name="fullName"
           [(ngModel)]="staff.fullName"
+          #fullName="ngModel"
           required
         />
+        <div
+        class="error"
+        *ngIf="fullName.invalid && fullName.touched"
+      >
+        กรุณากรอกชื่อ
+      </div>
       </label>
 
       <label>
-        Citizen ID
+        เลขบัตรประชาชน
         <input
           type="text"
           name="citizenId"
           [(ngModel)]="staff.s_citizenId"
-          required
+          disabled
         />
       </label>
 
       <label>
-        Birth date
+        วันเดือนปีเกิด
         <input type="date" name="birthDate" [(ngModel)]="staff.birthDate" />
       </label>
 
       <label>
-        Gender
+        เพศ
         <select name="gender" [(ngModel)]="staff.gender">
-          <option value="">Select gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
+          <option value="">เลือกเพศ</option>
+          <option value="male">ชาย</option>
+          <option value="female">หญิง</option>
+          <option value="other">อื่นๆ</option>
         </select>
       </label>
 
@@ -51,30 +58,30 @@
       </label>
 
       <label>
-        Phone
-        <input type="text" name="phone" [(ngModel)]="staff.phone" />
+        เบอร์ติดต่อ
+        <input type="tel" name="phone" [(ngModel)]="staff.phone" required/>
       </label>
 
       <label>
-        Position
-        <input type="text" name="position" [(ngModel)]="staff.position" />
+        ตำแหน่งที่รับผิดชอบ
+        <input type="text" name="position" [(ngModel)]="staff.position" disabled />
       </label>
 
       <label>
-        Password
-        <input type="text" name="password" [(ngModel)]="staff.password" />
+        รหัสผ่าน
+        <input type="text" name="password" [(ngModel)]="staff.password" required/>
       </label>
 
       <label class="full">
-        Address
+        ที่อยู่
         <textarea name="address" [(ngModel)]="staff.address"></textarea>
       </label>
     </div>
 
     <div class="actions">
-      <button type="button" class="secondary" (click)="cancel()">Cancel</button>
-      <button type="submit" [disabled]="saving">
-        {{ saving ? "Saving..." : "Save" }}
+      <button type="button" class="secondary" (click)="cancel()">ยกเลิก</button>
+      <button type="submit" [disabled]="editform.invalid || saving">
+        บันทึกข้อมูล
       </button>
     </div>
   </form>

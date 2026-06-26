@@ -53,7 +53,7 @@ label {
 input,
 select,
 textarea {
-  width: 100%;
+  width: 90%;
   padding: 12px 14px;
   border: 1px solid #d6dde7;
   border-radius: 8px;
@@ -64,7 +64,12 @@ textarea {
   outline: none;
 }
 
+select {
+  width: 97%;
+}
+
 textarea {
+  width: 95%;
   min-height: 100px;
   resize: vertical;
 }
@@ -74,6 +79,22 @@ select:focus,
 textarea:focus {
   border-color: #2f7a4f;
   box-shadow: 0 0 0 3px rgba(47, 122, 79, 0.14);
+}
+
+input:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  border: 1px solid #ced4da;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
 }
 
 .full {
