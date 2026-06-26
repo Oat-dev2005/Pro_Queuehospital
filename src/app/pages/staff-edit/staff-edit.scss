@@ -87,15 +87,17 @@ input:disabled {
   border: 1px solid #ced4da;
 }
 
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+
 .error {
   color: red;
   font-size: 13px;
   margin-top: 4px;
 }
 
-input.ng-invalid.ng-touched {
-  border: 1px solid red;
-}
 
 .full {
   grid-column: 1 / -1;
