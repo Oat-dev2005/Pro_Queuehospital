@@ -8,15 +8,18 @@ import { StaffList } from './pages/staff-list/staff-list';
 import { StaffEdit } from './pages/staff-edit/staff-edit';
 import { adminGuard } from './services/admin.guard';
 import { staffGuard } from './services/staff.guard';
+import { PatientQueue } from './pages/patient-queue/patient-queue';
 
 export const routes: Routes = [
   { path: 'login', component: Login },
+  
   { path: 'addstaff', component: AddStaff, canActivate: [adminGuard] },
   { path: 'patients', component: PatientList, canActivate: [staffGuard] },
   { path: 'info', component: Info, canActivate: [staffGuard] },
   { path: 'patient/:id', component: PatientDetail, canActivate: [staffGuard] },
   { path: 'staffs', component: StaffList, canActivate: [adminGuard] },
   { path: 'staff-edit/:id', component: StaffEdit, canActivate: [adminGuard] },
+  { path: 'queue/:id', component: PatientQueue },
   {
     path: '**',
     redirectTo: 'login',

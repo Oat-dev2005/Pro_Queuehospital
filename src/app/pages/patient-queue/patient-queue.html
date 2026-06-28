@@ -1,0 +1,13 @@
+<div *ngIf="queue; else loading">
+
+  <h2>คิวของคุณ</h2>
+
+  <p>เลขคิว: {{ queue.q_order }}</p>
+  <p>สถานะ: {{ queue.q_status }}</p>
+  <p>ห้อง: {{ queue.counter }}</p>
+
+</div>
+
+<ng-template #loading>
+  <p>กำลังโหลดข้อมูลคิว...</p>
+</ng-template>

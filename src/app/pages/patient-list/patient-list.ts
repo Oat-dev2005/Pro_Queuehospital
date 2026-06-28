@@ -7,6 +7,10 @@ import {
   Prescription,
   PrescriptService,
 } from '../../services/prescript.service';
+import { Queue, QueueService } from '../../services/queue.service';
+import { MatDialog } from '@angular/material/dialog';
+import { QrDialogal } from '../qr-dialogal/qr-dialogal';
+import QRCode from 'qrcode';
 
 @Component({
   selector: 'app-patient-list',
@@ -22,6 +26,8 @@ export class PatientList {
 
   constructor(
     private prescriptService: PrescriptService,
+    private queueService: QueueService,
+    private dialog: MatDialog,
     private router: Router,
   ) {
     this.prescriptions$ = combineLatest([
@@ -45,11 +51,34 @@ export class PatientList {
 
   openDetail(prescription: Prescription) {
     if (prescription.id) {
-      this.router.navigate(['/prescription', prescription.id]);
+      this.router.navigate(['/patients', prescription.id]);
     }
   }
 
-  showQR(prescription: Prescription) {
-    alert('QR Code UI');
+  async showQR(prescription: Prescription) {
+    const queue = await this.queueService.getOrCreateQueue(
+      prescription.patientId,
+      prescription.prescriptionId
+    );
+
+    await this.openQrDialog(queue);
+  }
+
+  async openQrDialog(queue: Queue) {
+    const queueUrl =
+    `http://192.168.0.105:4200/queue/${queue.id}`;
+
+    const qrImage = await QRCode.toDataURL(queueUrl);
+
+    this.dialog.open(QrDialogal, {
+      width: '400px',
+      data: {
+        qrImage,
+        queueNumber: queue.q_order,
+        status: queue.q_status,
+      }
+    });
+    console.log('📌 QR URL =', queueUrl);
   }
 }
+
